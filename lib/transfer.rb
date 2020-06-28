@@ -16,13 +16,13 @@ class Transfer
   end
   def execute_transaction
     puts @status
-    if self.valid? and @status=='pending'
+    if @sender.balance<@amount
+      @status="rejected"
+      "Transaction rejected. Please check your account balance."
+    elsif self.valid? and @status=='pending'
       @sender.balance-=@amount
       @receiver.balance+=@amount
       @status='complete'
-    elsif @sender.balance<@amount
-      @status="rejected"
-      "Transaction rejected. Please check your account balance."
     else
       @status="rejected"
       "Transaction rejected. Please check your account balance."
