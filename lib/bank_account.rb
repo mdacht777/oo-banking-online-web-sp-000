@@ -11,6 +11,6 @@ class BankAccount
     @balance+=amt
   end
   def display_balance
-    puts "Your balance is $"+ @balance+"."
+    "Your Balance is $#{@balance}."
   end
 end
