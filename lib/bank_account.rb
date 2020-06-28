@@ -6,7 +6,5 @@ class BankAccount
     @name=name
     @balance=1000
     @status="open"
-    puts self.name==name
-    # binding.pry
   end
 end
